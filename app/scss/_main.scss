@@ -1,0 +1,543 @@
+.main{
+    @include breakpoint-up(large){
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        max-width: 90rem;
+     }
+    &__wrapper{
+        @include breakpoint-up(large){
+            margin: 3rem 4rem auto 3rem;
+           // max-height: 100rem;
+         }
+        &__left{
+            margin: 3.2rem 1rem 1rem 1.2rem;
+            @include breakpoint-up(medium){
+                margin: 5.5rem 0rem 2rem 4rem;
+             }
+             @include breakpoint-up(large){
+                margin: 0rem 0rem 0rem 4rem;
+                position: fixed;
+                max-width: 27rem;
+                min-width: 24rem;
+                width: 30%;
+                display: flex;
+                flex-direction: column;
+             }
+            h2{
+                font-family: $secondFont;
+                color: $white;
+                font-size: 1.9rem;
+                @include breakpoint-up(medium){
+                    font-size: 2.6rem;
+                 }
+            }
+            h3{
+                color:$white;
+                margin-top: 0.6rem;
+                font-family: $firstFont;
+                font-size: 1.3rem;
+                font-weight: 500;
+            }
+            p{
+                color:$lightWhite;
+                margin-top: 1rem;
+                font-size: 1.02rem;
+                font-family: $firstFont;
+                font-weight:500;
+            }
+            a{
+                & .credentials{
+                    display: inline-flex; /* Change display to inline-flex */
+                    justify-content: center;
+                    margin-top: 0.3rem;
+                    align-items: center;
+                    div{
+                        width:1.6rem;
+                        height: 0.1rem;
+                        background-color: $lightWhite;
+                        margin: 0.67rem 2rem 0rem 0rem;
+                        //width: 0;
+                        //transition: width 0.5s; 
+                        transform-origin: left;
+                        transform: scaleX(1);
+                        transition: transform 0.6s;
+                        
+                    }
+        
+                    p{
+                        margin-top: 0.8rem;
+                        color: $lightWhite;
+                        font-size: 1rem;
+                        font-family: $firstFont;
+                        transition: transform 2s;
+                    }
+                    @include breakpoint-down(medium){
+                        display: none;
+                     }
+         
+                }
+
+                & .experience{
+                    display: inline-flex; /* Change display to inline-flex */
+                     justify-content: center;
+                     align-items: center;
+                     margin-left: 2.4rem;
+                     div{
+                         width:0.8rem;
+                         height: 0.085rem;
+                         background-color: $lightWhite;
+                         margin: 0.37rem 2rem 0rem 0rem;
+                         transform-origin: left;
+                            transform: scaleX(1);
+                            transition: transform 0.6s;
+                     }
+         
+                     p{
+                         color: $lightWhite;
+                         font-size: 0.8rem;
+                         font-family: $firstFont;
+                         transition: transform 2s;
+                         margin-top: 0.3rem;
+                     }
+                 }
+               
+                &:hover{
+                    .credentials{
+                        div{
+                            transform: scaleX(2);
+                             //margin-left: 1rem;
+                            background-color: $white;
+                            }
+                            p{
+                                margin-left: 1rem;
+                                color: $white;
+                                font-weight: 600;
+                                font-size: 1.09rem;
+                            }
+                               }
+
+                    .experience{
+                            div{
+                               background-color: $white;
+                                //width:3rem;
+                                transform: scaleX(2);
+                                //margin-left: 1rem;
+                            }
+                            p{
+                               margin-left: 1rem;
+                               color: $white;
+                               font-weight: 600;
+                           }
+                        }
+                    }
+                    
+                        
+                        &.active {
+                            .credentials div {
+                              transform: scaleX(2);
+                              background-color: $white;
+                            }
+                           .credentials p {
+                              margin-left: 1rem;
+                              color: $white;
+                              font-weight: 600;
+                            }
+
+                            .experience div{
+                                background-color: $white;
+                                     //width:3rem;
+                                     transform: scaleX(2);
+                            }
+                           .experience p{
+                                margin-left: 1rem;
+                                color: $white;
+                                font-weight: 600;
+                            }
+                          }
+                               
+             }
+
+            & .skills{
+                margin-top: 1rem;
+                p{
+                    font-size: 1.3rem;
+                    color:$white;
+                    font-weight: 700;
+                }
+                ul{
+                    margin-top: 0.8rem;
+                    li{
+                        color: $skyBlue;
+                        font-size: 0.8rem;
+                        letter-spacing: 0.04rem;
+                        list-style-type: none;
+                        background-color: rgb(30, 42, 68);
+                        border-radius: 15px;
+                        display: inline-block;
+                        font-weight: 500;
+                        padding: 0.5rem;
+                        margin: 0.2rem;
+                        font-family: $firstFont;
+                    }
+                }
+             }  
+             & .icons{
+                
+                display: flex;
+                justify-content: center;
+                margin-top: 2rem;
+                @include breakpoint-up(large){
+                 margin: 0;
+                  position: fixed;
+                  bottom: 3%;
+                  left: 9%;
+                 }
+                 span{
+                    a{
+                        img{
+                            margin: 0rem 1.6rem 1rem 0rem;
+                               width: 1.75rem;
+                               height: auto;
+                              background-color: antiquewhite;
+                             border-radius: 3px;
+                            }
+                     }
+                 }
+                    
+               
+            }
+        }
+       
+    }
+
+
+    &__right{
+        @include breakpoint-up(large){
+            width: 60%;
+            max-width: 42rem;
+            margin: 1.5rem 1rem 4rem 0rem;
+         }
+        position: relative;
+        width: 92%;
+        margin:1rem 0rem 10rem 0rem;
+
+        section{
+            margin:  0rem;
+         
+            .hAbout{
+                display: block;
+                color: $white;
+                font-size: 1.5rem;
+                font-family: $firstFont;
+                text-align: left;
+                margin-left: 6%;
+                margin-bottom: 0.5rem;
+                padding: 0.8rem;
+                width: 100%;
+                position: sticky;
+                top: 0;
+                background-color: rgb(19, 29, 51,50%); /* Set the background color as needed */
+                z-index:10;
+                opacity: 1;
+                transition: opacity 0.3s ease;/* Ensure it appears above other elements on the page */
+                @include breakpoint-up(large){
+                    display: none;
+                 }
+            }
+           & .topParaghraph{
+                margin-top: 2rem;
+                font-weight: bold;
+                font-size: 1.3rem;
+ 
+          }
+         
+            p{
+                margin-top: 2rem;
+                margin-bottom: 2.5rem;
+                margin: 0 auto;
+                color: $lightWhite;
+                font-size: 1.1rem;
+                font-family: $firstFont;
+                width: 80%;
+                max-width: 39rem;
+               // cursor:pointer;
+                font-weight:500;
+                letter-spacing: 0.01rem;
+                line-height: 1.625rem;
+                @include breakpoint-up(medium){
+                    width: 90%;
+                 }
+            }
+        }
+        & .wrap{
+            .hCertifications{
+                display: block;
+                color: $white;
+                font-size: 1.5rem;
+                font-family: $firstFont;
+                text-align: left;
+                margin-bottom: 0.5rem;
+                margin-top: 1rem;
+                margin-left: 6%;
+                padding: 0.8rem;
+                width: 100%;
+                position: sticky;
+                top: 0;
+                background-color: rgb(19, 29, 51,50%); /* Set the background color as needed */
+                z-index:10;
+                opacity: 1;
+                transition: opacity 0.3s ease;/* Ensure it appears above other elements on the page */ 
+                @include breakpoint-up(large){
+                    display: none;
+                 }
+            }
+
+            .hProjects{
+                display: block;
+                color: $white;
+                font-size: 1.5rem;
+                font-family: $firstFont;
+                text-align: left;
+                margin-bottom: 0.5rem;
+                margin-top: 1rem;
+                margin-left: 6%;
+                padding: 0.8rem;
+                width: 100%;
+                position: sticky;
+                top: 0;
+                background-color: rgb(19, 29, 51,50%); /* Set the background color as needed */
+                z-index:10;
+                opacity: 1;
+                transition: opacity 0.3s ease;/* Ensure it appears above other elements on the page */  
+                @include breakpoint-up(large){
+                    display: none;
+                 } 
+            }
+            .hExperience{
+                display: block;
+                color: $white;
+                font-size: 1.5rem;
+                font-family: $firstFont;
+                text-align: left;
+                margin-top: 1rem;
+                margin-bottom: 0.5rem;
+                margin-left: 6%;
+                padding: 0.8rem;
+                width: 100%;
+                position: sticky;
+                top: 0;
+                background-color: rgb(19, 29, 51,50%); /* Set the background color as needed */
+                z-index:10;
+                opacity: 1;
+                transition: opacity 0.3s ease;/* Ensure it appears above other elements on the page */  
+                @include breakpoint-up(large){
+                    display: none;
+                 }          
+            }
+            .hEducation{
+                display: block;
+                color: $white;
+                font-size: 1.5rem;
+                font-family: $firstFont;
+                text-align: left;
+                margin-top: 1rem;
+                margin-bottom: 0.5rem;
+                margin-left: 6%;
+                padding: 0.8rem;
+                width: 100%;
+                position: sticky;
+                top: 0;
+                background-color: rgb(19, 29, 51,50%); /* Set the background color as needed */
+                z-index:10;
+                opacity: 1;
+                transition: opacity 0.3s ease;/* Ensure it appears above other elements on the page */
+                @include breakpoint-up(large){
+                    display: none;
+                 }
+            }
+            //pointer-events: none;
+            & .experienceText{
+                margin: 1rem 0rem 1rem 0rem;
+                a{
+                   // height: 200hv;
+                    & .items{
+                        padding: 1rem;
+                        display: flex;
+                        justify-content: flex-start;
+                        gap: 0.8rem;
+                        margin-top: 1.5rem;
+                        max-width: 38rem;
+                        @include breakpoint-up(medium){
+                            width: 80%;
+                            margin: 0 auto;
+                         }
+                        h4{
+                         color:  $lightWhite;
+                         font-size: 0.71rem;
+                         min-width: 2rem;
+                         text-align: center;
+                         font-family: $firstFont;
+                        }
+                
+                        &__description{
+                          & .arrow{
+                            display: flex;
+                            justify-content: flex-start;
+                            gap: 0.4rem;
+                            h3{
+                                color: $white;
+                                font-family: 'Montserrat', sans-serif;
+                                font-size: 1rem;
+                            }
+    
+                            img{
+                                display: inline-block;
+                                width: 1rem;
+                            }
+                          }
+                            
+    
+                            h4{
+                                margin-top: 0.3rem;
+                                font-family: $firstFont;
+                                font-size: 1rem;
+                                width: 100%;
+                                color: $lightWhite;
+                                text-align: left;
+                            }
+    
+                            p{
+                                color: $lightWhite;
+                                margin-top: 0.3rem;
+                               width: 100%;
+                               font-size: 0.9rem;
+                               font-family: $firstFont;
+                            }
+                           
+                        }
+                        &:hover{
+                           // border: 0.01rem 0.01rem 0.01rem 0.01rem solid $lightWhite;
+                            border-radius: 10px;
+                            background-color: rgb(19, 29, 51);
+                            h3{
+                                color: $skyBlue;
+                            }
+                        }
+    
+                        & .skill{
+                           margin-top: 0.5rem;
+                            ul{
+                                li{
+                                    color: $skyBlue;
+                                    font-size: 0.75rem;
+                                    letter-spacing: 0.04rem;
+                                    list-style-type: none;
+                                    background-color: rgb(30, 42, 68);
+                                    border-radius: 15px;
+                                    display: inline-block;
+                                    font-weight: 500;
+                                    padding: 0.5rem;
+                                    margin: 0.2rem;
+                                    font-family: $firstFont;
+                                }
+                            }
+                        }
+                    }
+     
+                } 
+            }
+        
+            & .projects{
+                margin: 1rem 0rem 0rem 0.2rem;
+                //height: 200hv;
+                a{
+                  
+                    & .items{
+                        padding: 1rem 2rem 1rem 2rem;
+                        display: flex;
+                        justify-content: flex-start;
+                        gap: 0.8rem;
+                        margin-top: 1rem;
+                        max-width: 38rem;
+                        @include breakpoint-up(medium){
+                            width: 80%;
+                            margin: 0 auto;
+                         }
+                        img{
+                            width: 7rem;
+                            height:4rem;
+                        }
+                
+                        &__description{
+                          & .arrow{
+                            display: flex;
+                            justify-content: flex-start;
+                            gap: 0.4rem;
+                            h3{
+                                color: $white;
+                                font-family: 'Montserrat', sans-serif;
+                                font-size: 1rem;
+                            }
+    
+                            img{
+                                display: inline-block;
+                                width: 1rem;
+                                height: 1rem;
+                            }
+                          }
+                            
+    
+                            h4{
+                                margin-top: 0.3rem;
+                                font-family: $firstFont;
+                                font-size: 1rem;
+                                width: 100%;
+                                color: $lightWhite;
+                                text-align: left;
+                            }
+    
+                            p{
+                                color: $lightWhite;
+                                margin-top: 0.3rem;
+                               width: 100%;
+                               font-size: 0.9rem;
+                               font-family: $firstFont;
+                            }
+                           
+                        }
+                        &:hover{
+                           // border: 0.01rem 0.01rem 0.01rem 0.01rem solid $lightWhite;
+                            border-radius: 10px;
+                            background-color: rgb(19, 29, 51);
+                            h3{
+                                color: $skyBlue;
+                            }
+                        }
+    
+                        & .skill{
+                           margin-top: 0.5rem;
+                            ul{
+                                li{
+                                    color: $skyBlue;
+                                    font-size: 0.7rem;
+                                    letter-spacing: 0.04rem;
+                                    list-style-type: none;
+                                    background-color: rgb(30, 42, 68);
+                                    border-radius: 15px;
+                                    display: inline-block;
+                                    font-weight: 500;
+                                    padding: 0.5rem;
+                                    margin: 0.2rem;
+                                    font-family: $firstFont;
+                                }
+                            }
+                        }
+                    }
+     
+                } 
+            }
+        }
+
+        }
+}
